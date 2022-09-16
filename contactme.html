@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="contactme.css">
+        <title>CONTACT ME</title>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+
+        <script>
+            function form(){
+                var x = document.forms.myform.fname.value;
+                if (x == ""){
+                    alert("Name must be filled");
+                    return false;
+                }
+                var a = document.forms.myform.sapid.value;
+                if (a == ""){
+                    alert("SAPID must be filled");
+                    return false;
+                }
+                var y = document.forms.myform.phone.value;
+                if(isNaN(y) || y>9999999999 ){
+                    alert("INVALID NUMBER");
+                    return false;
+                }
+                let z = document.forms.myform.email.value;
+                if (z == ""){
+                    alert("Email-id required");
+                    return false;
+                }
+
+            }
+        </script>
+        
+    </head>
+    <body>
+        <h2>CONTACT FORM</h2>
+            <form name="myform" method="post" onsubmit=" return form()">
+                <label for="fname"><b>YOUR NAME   :-</b>
+                <input type="text" name="fname"></label>
+                <label for="sapid"><b>YOUR SAP ID :</b>
+                <input type="text" name="sapid"></label>
+                <label for="phone"><b>CONTACT NO: </b>
+                <input type="text" name="phone"></label>
+                <label for="email"><b>EMAIL -  ADD :-</b>
+                <input type="email" name="email"></label>
+                <div>
+                <input type="submit" value="SUBMIT"></div>
+            </form>
+        
+    </body>
+</html>
